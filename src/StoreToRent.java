@@ -129,6 +129,7 @@ public class StoreToRent {
         input.close();
     }
 
+    
     @Override
     public String toString() {
         return "\n" + 
