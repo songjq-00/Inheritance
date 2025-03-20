@@ -127,7 +127,6 @@ public class StoreToRent {
         System.out.println("Enter Available: ");
         setAvailable(input.nextBoolean());    
         input.close();
-        
     }
 
     @Override
@@ -144,7 +143,6 @@ public class StoreToRent {
         "Available: " + available + "\n";
     }
 
-   
     public double calculateLoanFinancing() {
         if(loanRequired) {
             return (loanAmount * (1 + INTEREST_RATE)) / loanPaymentTerm;

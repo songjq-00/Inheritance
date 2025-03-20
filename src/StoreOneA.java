@@ -13,7 +13,7 @@ public class StoreOneA extends StoreToRent {
         this.specialCustomer = specialCustomer;
     }
 
-    public double calculateLoanFinancing() {
+    public double calculateLoanFinancing(){
         monthlyPayment = super.calculateLoanFinancing();
         if(specialCustomer) {
             return  monthlyPayment -= (monthlyPayment * DISCOUNT_RATE);
