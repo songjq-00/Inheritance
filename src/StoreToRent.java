@@ -79,6 +79,32 @@ public class StoreToRent {
         this.available = available;
     }
 
+    private final double INTEREST_RATE = 0.25;
+    private boolean loanRequired;
+    private double loanAmount;
+    private int loanPaymentTerm;
+
+    public double getInterestRate() {
+        return INTEREST_RATE;
+    }
+
+    public boolean getLoanRequired() {
+        return loanRequired;
+    }
+    public double getLoanAmount() {
+        return loanAmount;
+    }
+    public double getLoanPaymentTerm() {
+        return loanPaymentTerm;
+    }
+
+    public StoreToRent(boolean loanRequired, double loanAmount, int loanPaymentTerm) {
+        this.loanRequired = loanRequired;
+        this.loanAmount = loanAmount;
+        this.loanPaymentTerm = loanPaymentTerm;
+    }
+
+
     public void enterStoreDetails(){
         Scanner input = new Scanner(System.in);
         System.out.println("Enter Store Name: ");
@@ -116,5 +142,14 @@ public class StoreToRent {
         "Floor Number: " + floorNumber + "\n" +
         "Maintenance Cost: €" + MAINTENANCE_COST + "\n" +
         "Available: " + available + "\n";
+    }
+
+   
+    public double calculateLoanFinancing() {
+        if(loanRequired) {
+            return (loanAmount * (1 + INTEREST_RATE)) / loanPaymentTerm;
+        } else {
+            return 0.0;
+        }
     }
 }
